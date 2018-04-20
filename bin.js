@@ -25,7 +25,8 @@ async function main () {
     assetsDir: 'assets',
     htmlFile: 'app.html',
     jsDevFile: 'build/app.js',
-    jsProdFile: 'build/app.min.js'
+    jsProdFile: 'build/app.min.js',
+    wellKnownDir: 'well-known'
   }
 
   if (args['serve']) {

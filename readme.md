@@ -27,12 +27,13 @@ Cadmium currently uses some very opinionated defaults:
 - Every file in `assets/` with a rev hash in the filename will be uploaded to `/`
   - e.g. `assets/close-2f3235788c.svg` will be served at `/close-2f3235788c.svg`
   - if the file content doesn't match the revhash, an error will be thrown
+- Every file in `well-known/` will be uploaded to `/.well-known`
 
-Every revhashed file will only be uploaded if it doesn't already exists. `app.html` will always be uploaded.
+Every revhashed file will only be uploaded if it doesn't already exists. `app.html`, and `well-known`-files, will always be uploaded.
 
 The algorithm used for revhashing is the [rev-hash package](https://github.com/sindresorhus/rev-hash), which takes an md5 sum and truncates it to 10 characters.
 
-When everything is uploaded an invalidation for the path `/` will be issued to the CloudFront distribution. Since every other file is revhashed every subsequent visit should now be the latest version.
+When everything is uploaded an invalidation for the path `/` and `/.well-known/*` will be issued to the CloudFront distribution. Since every other file is revhashed every subsequent visit should now be the latest version.
 
 ### Serve app locally
 
