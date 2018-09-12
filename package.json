@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@filestore/s3": "^0.1.0",
-    "aws-sdk": "^2.124.0",
+    "aws-sdk": "^2.313.0",
     "express": "^4.16.0",
     "globby": "^6.1.0",
     "html-minifier": "^3.5.5",
