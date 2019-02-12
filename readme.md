@@ -22,7 +22,7 @@ cadmium deploy --s3-bucket=website --cloudfront-distribution-id=C991478EDD28R
 
 Cadmium currently uses some very opinionated defaults:
 
-- `dist/main.min.js` will be revhashed and uploaded to `/main-${revHash}.js`
+- `dist/main.js` will be revhashed and uploaded to `/main-${revHash}.js`
 - `app.html` will be minified and uploaded as `index.html`, with `src="/main.js"` replaced by the path to the above file
 - Every file in `assets/` with a rev hash in the filename will be uploaded to `/`
   - e.g. `assets/close-2f3235788c.svg` will be served at `/close-2f3235788c.svg`
@@ -44,5 +44,3 @@ cadmium serve --port=3000
 ```
 
 This command will start an http server that will match the behaviour that you should see from a site deployed to S3 + CloudFront.
-
-The only difference to the `deploy` command is that it will look for the JavaScript at `dist/main.js` instead of `dist/main.min.js`, and it won't minify the html.

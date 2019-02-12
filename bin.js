@@ -24,8 +24,7 @@ async function main () {
   const options = {
     assetsDir: 'assets',
     htmlFile: 'app.html',
-    jsDevFile: 'dist/main.js',
-    jsProdFile: 'dist/main.min.js',
+    jsFile: 'dist/main.js',
     wellKnownDir: 'well-known'
   }
 
